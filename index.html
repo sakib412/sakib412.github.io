@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Najmus Sakib — CTO · Full-Stack Engineer</title>
+<meta name="description" content="Najmus Sakib — CTO at EzyCourse. Full-stack engineer building large-scale SaaS platforms with TypeScript, Next.js, and AdonisJS." />
+<meta property="og:title" content="Najmus Sakib — CTO · Full-Stack Engineer" />
+<meta property="og:description" content="CTO at EzyCourse. Building large-scale SaaS platforms with TypeScript, Next.js, and AdonisJS." />
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/54371956?v=4" />
+<meta property="og:url" content="https://sakib412.github.io/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #07080c;
+    --bg-soft: #0d0f16;
+    --card: #11141d;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(139, 148, 255, 0.35);
+    --ink: #eef0f6;
+    --muted: #9aa1b5;
+    --faint: #636b80;
+    --accent: #8b94ff;
+    --accent-2: #5eead4;
+    --accent-3: #f0abfc;
+    --glow: rgba(139, 148, 255, 0.14);
+    --radius: 16px;
+    --font-body: "Inter", system-ui, -apple-system, sans-serif;
+    --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--accent); color: #0a0b10; }
+
+  .aurora {
+    position: fixed; inset: 0; z-index: -1; overflow: hidden;
+    background:
+      radial-gradient(600px 400px at 15% -5%, rgba(139,148,255,0.13), transparent 65%),
+      radial-gradient(700px 500px at 90% 10%, rgba(94,234,212,0.07), transparent 65%),
+      radial-gradient(800px 600px at 50% 110%, rgba(240,171,252,0.06), transparent 65%);
+  }
+  .grid-lines {
+    position: fixed; inset: 0; z-index: -1;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 30%, transparent 75%);
+  }
+
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background: rgba(7, 8, 12, 0.72);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1060px; margin: 0 auto; padding: 16px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo {
+    font-family: var(--font-mono); font-size: 15px; font-weight: 500;
+    color: var(--ink); text-decoration: none; letter-spacing: -0.02em;
+  }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta {
+    padding: 8px 16px; border: 1px solid var(--border); border-radius: 99px;
+    color: var(--ink) !important; transition: border-color 0.2s, background 0.2s;
+  }
+  .nav-cta:hover { border-color: var(--border-hover); background: var(--glow); }
+
+  header { padding: 168px 0 96px; }
+  .status {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); font-size: 12.5px; color: var(--accent-2);
+    border: 1px solid rgba(94, 234, 212, 0.25); background: rgba(94, 234, 212, 0.06);
+    padding: 6px 14px; border-radius: 99px; margin-bottom: 28px;
+  }
+  .status::before {
+    content: ""; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent-2); box-shadow: 0 0 10px var(--accent-2);
+    animation: pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse { 50% { opacity: 0.35; } }
+  h1 {
+    font-family: var(--font-display); font-size: clamp(42px, 7vw, 76px);
+    font-weight: 700; line-height: 1.04; letter-spacing: -0.03em; margin-bottom: 24px;
+  }
+  .gradient-text {
+    background: linear-gradient(100deg, var(--accent) 0%, var(--accent-3) 55%, var(--accent-2) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .lede { max-width: 620px; font-size: 18px; color: var(--muted); margin-bottom: 40px; }
+  .lede strong { color: var(--ink); font-weight: 600; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-family: var(--font-display); font-size: 15px; font-weight: 600;
+    padding: 13px 26px; border-radius: 12px; text-decoration: none;
+    transition: transform 0.18s, box-shadow 0.18s, background 0.18s, border-color 0.18s;
+  }
+  .btn-primary {
+    background: linear-gradient(120deg, var(--accent), #7c6ff0);
+    color: #0a0b10; box-shadow: 0 8px 32px rgba(139, 148, 255, 0.28);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(139, 148, 255, 0.4); }
+  .btn-ghost { border: 1px solid var(--border); color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--border-hover); background: var(--glow); transform: translateY(-2px); }
+  .socials { display: flex; gap: 6px; margin-left: 6px; }
+  .socials a {
+    display: grid; place-items: center; width: 42px; height: 42px;
+    border-radius: 11px; color: var(--muted); transition: color 0.2s, background 0.2s;
+  }
+  .socials a:hover { color: var(--ink); background: rgba(255,255,255,0.06); }
+  .socials svg { width: 19px; height: 19px; fill: currentColor; }
+
+  section { padding: 88px 0; }
+  .kicker {
+    font-family: var(--font-mono); font-size: 13px; color: var(--accent);
+    letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px;
+  }
+  .kicker::before { content: "// "; color: var(--faint); }
+  h2 {
+    font-family: var(--font-display); font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700; letter-spacing: -0.02em; margin-bottom: 40px;
+  }
+
+  .about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 56px; align-items: start; }
+  .about-grid p { color: var(--muted); margin-bottom: 18px; font-size: 16.5px; }
+  .about-grid p strong { color: var(--ink); font-weight: 600; }
+  .stat-cards { display: grid; gap: 14px; }
+  .stat {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 22px 24px;
+  }
+  .stat .num {
+    font-family: var(--font-display); font-size: 30px; font-weight: 700;
+    background: linear-gradient(100deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .stat .label { font-size: 13.5px; color: var(--muted); margin-top: 2px; }
+
+  .timeline { position: relative; padding-left: 34px; }
+  .timeline::before {
+    content: ""; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 1.5px;
+    background: linear-gradient(var(--accent), rgba(139,148,255,0.05));
+  }
+  .t-item { position: relative; padding-bottom: 44px; }
+  .t-item:last-child { padding-bottom: 0; }
+  .t-item::before {
+    content: ""; position: absolute; left: -32px; top: 7px; width: 13px; height: 13px;
+    border-radius: 50%; background: var(--bg); border: 2.5px solid var(--accent);
+    box-shadow: 0 0 14px rgba(139, 148, 255, 0.55);
+  }
+  .t-when { font-family: var(--font-mono); font-size: 12.5px; color: var(--accent-2); margin-bottom: 6px; }
+  .t-role { font-family: var(--font-display); font-size: 20px; font-weight: 600; }
+  .t-org { color: var(--accent); font-weight: 500; }
+  .t-desc { color: var(--muted); font-size: 15.5px; margin-top: 8px; max-width: 660px; }
+
+  .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+  .proj {
+    display: flex; flex-direction: column; gap: 14px;
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 26px; text-decoration: none; color: inherit;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .proj::after {
+    content: ""; position: absolute; inset: 0; opacity: 0;
+    background: radial-gradient(420px 200px at 50% 0%, var(--glow), transparent 70%);
+    transition: opacity 0.25s; pointer-events: none;
+  }
+  .proj:hover { transform: translateY(-4px); border-color: var(--border-hover); box-shadow: 0 18px 44px rgba(0,0,0,0.45); }
+  .proj:hover::after { opacity: 1; }
+  .proj-top { display: flex; justify-content: space-between; align-items: center; }
+  .proj-top svg { width: 20px; height: 20px; fill: var(--faint); transition: fill 0.2s; }
+  .proj:hover .proj-top svg { fill: var(--accent); }
+  .proj h3 { font-family: var(--font-display); font-size: 18.5px; font-weight: 600; }
+  .proj p { color: var(--muted); font-size: 14.5px; flex: 1; }
+  .proj-meta { display: flex; gap: 14px; align-items: center; font-family: var(--font-mono); font-size: 12.5px; color: var(--faint); }
+  .lang-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: -0.5px; }
+  .proj.featured { grid-column: 1 / -1; }
+  .proj.featured h3 { font-size: 22px; }
+  .chiprow { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    font-family: var(--font-mono); font-size: 12px; color: var(--muted);
+    border: 1px solid var(--border); border-radius: 99px; padding: 4px 12px;
+  }
+
+  .skill-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+  .skill-col { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+  .skill-col h3 {
+    font-family: var(--font-mono); font-size: 13px; font-weight: 500; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;
+  }
+  .skill-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .skill-col li { color: var(--muted); font-size: 14.5px; display: flex; align-items: center; gap: 10px; }
+  .skill-col li::before { content: "▹"; color: var(--accent-2); font-size: 12px; }
+
+  .contact-card {
+    text-align: center; background: linear-gradient(180deg, var(--card), var(--bg-soft));
+    border: 1px solid var(--border); border-radius: 24px; padding: 72px 32px;
+    position: relative; overflow: hidden;
+  }
+  .contact-card::before {
+    content: ""; position: absolute; top: -120px; left: 50%; transform: translateX(-50%);
+    width: 480px; height: 240px; background: var(--glow); filter: blur(70px); border-radius: 50%;
+  }
+  .contact-card h2 { margin-bottom: 14px; }
+  .contact-card p { color: var(--muted); max-width: 470px; margin: 0 auto 34px; position: relative; }
+
+  footer { border-top: 1px solid var(--border); padding: 34px 0; }
+  .foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .foot p { font-family: var(--font-mono); font-size: 12.5px; color: var(--faint); }
+  .foot a { color: var(--muted); text-decoration: none; }
+  .foot a:hover { color: var(--ink); }
+
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 760px) {
+    .nav-links a:not(.nav-cta) { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    header { padding-top: 136px; }
+    section { padding: 64px 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="aurora"></div>
+<div class="grid-lines"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#top">sakib<span>.dev</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a class="nav-cta" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top" class="wrap">
+  <div class="status">Open to interesting problems</div>
+  <h1>Najmus Sakib.<br /><span class="gradient-text">I build platforms<br />that scale.</span></h1>
+  <p class="lede">
+    CTO at <strong>EzyCourse</strong> — leading engineering on a multi-tenant SaaS
+    powering online courses, communities, and creator businesses. I work across the
+    whole stack: <strong>TypeScript, Next.js, AdonisJS</strong>, and the infrastructure underneath.
+  </p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="#projects">See my work →</a>
+    <a class="btn btn-ghost" href="mailto:sakib@appifylab.com">Contact me</a>
+    <div class="socials">
+      <a href="https://github.com/sakib412" aria-label="GitHub" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+      </a>
+      <a href="https://twitter.com/sakib412" aria-label="Twitter / X" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M18.9 1.2h3.7l-8.1 9.3L24 22.8h-7.5l-5.9-7.7-6.7 7.7H.2l8.6-9.9L0 1.2h7.7l5.3 7 6-7zm-1.3 19.5h2L6.6 3.3h-2.2l13.2 17.4z"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/sakib412" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.2V9h3.4v1.6h.1a3.8 3.8 0 0 1 3.4-1.9c3.6 0 4.3 2.4 4.3 5.5v6.3zM5.2 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7 20.5H3.4V9H7v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 1 .8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7c0-1-.8-1.7-1.8-1.7z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="wrap">
+  <p class="kicker">About</p>
+  <h2 class="reveal">Engineer first, leader by necessity.</h2>
+  <div class="about-grid">
+    <div class="reveal">
+      <p>
+        I'm a full-stack engineer from <strong>Bangladesh 🇧🇩</strong> who ended up running
+        engineering at <strong>EzyCourse</strong> (by AppifyLab) — an all-in-one platform where
+        creators build courses, communities, and entire businesses on their own branded sites and apps.
+      </p>
+      <p>
+        My day-to-day spans a large TypeScript monorepo: <strong>Next.js</strong> frontends,
+        <strong>AdonisJS</strong> microservices, multi-tenant architecture, payments, real-time
+        chat, and a drag-and-drop website builder. I care a lot about performance and
+        cost-aware engineering — the kind where you do the query math <em>before</em> you ship.
+      </p>
+      <p>
+        Still a builder at heart: I write code every day, review most of what ships,
+        and obsess over developer experience for my team.
+      </p>
+    </div>
+    <div class="stat-cards reveal">
+      <div class="stat"><div class="num">CTO</div><div class="label">EzyCourse — leading product engineering</div></div>
+      <div class="stat"><div class="num">100+</div><div class="label">public repositories on GitHub</div></div>
+      <div class="stat"><div class="num">10+</div><div class="label">production apps in one monorepo</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="wrap">
+  <p class="kicker">Experience</p>
+  <h2 class="reveal">Where I've been.</h2>
+  <div class="timeline">
+    <div class="t-item reveal">
+      <div class="t-when">Present</div>
+      <div class="t-role">Chief Technology Officer · <span class="t-org">EzyCourse</span></div>
+      <p class="t-desc">
+        Leading architecture and engineering for a multi-tenant SaaS serving course creators
+        and communities worldwide — spanning web builders, LMS, live streaming, payments,
+        and mobile apps. Own the technical roadmap, scaling strategy, and engineering culture.
+      </p>
+    </div>
+    <div class="t-item reveal">
+      <div class="t-when">Earlier</div>
+      <div class="t-role">Full-Stack Engineer · <span class="t-org">AppifyLab</span></div>
+      <p class="t-desc">
+        Built and shipped product features across the EzyCourse ecosystem — from rich text
+        editors and website builders to payment integrations and real-time systems.
+      </p>
+    </div>
+    <div class="t-item reveal">
+      <div class="t-when">Foundation</div>
+      <div class="t-role">Self-taught → CS50 → Production</div>
+      <p class="t-desc">
+        Started with competitive programming in C++, went deep on web fundamentals with
+        Harvard's CS50, and never stopped shipping since.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="wrap">
+  <p class="kicker">Projects</p>
+  <h2 class="reveal">Selected work.</h2>
+  <div class="proj-grid">
+    <a class="proj featured reveal" href="https://ezycourse.com" target="_blank" rel="noopener">
+      <div class="proj-top">
+        <h3>EzyCourse — All-in-one creator platform</h3>
+        <svg viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.8 9.8-1.4-1.4L17.6 5H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/></svg>
+      </div>
+      <p>
+        The platform I lead engineering for: courses, communities, memberships, live streaming,
+        website builder, and branded mobile apps — one multi-tenant system serving thousands of
+        creator businesses on their own domains.
+      </p>
+      <div class="chiprow">
+        <span class="chip">Next.js</span><span class="chip">AdonisJS</span><span class="chip">TypeScript</span>
+        <span class="chip">Multi-tenant</span><span class="chip">Turborepo</span><span class="chip">AWS</span>
+      </div>
+    </a>
+    <a class="proj reveal" href="https://github.com/sakib412/lexical-react-rte" target="_blank" rel="noopener">
+      <div class="proj-top">
+        <h3>lexical-react-rte</h3>
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+      </div>
+      <p>Production-grade rich text editor for React built on Meta's Lexical framework — toolbar, plugins, and clean serialized output.</p>
+      <div class="proj-meta"><span><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span><span>★ Open source</span></div>
+    </a>
+    <a class="proj reveal" href="https://github.com/sakib412/next-intl-turborepo" target="_blank" rel="noopener">
+      <div class="proj-top">
+        <h3>next-intl-turborepo</h3>
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+      </div>
+      <p>Minimal, copy-ready template for wiring next-intl into a Turborepo monorepo — the setup guide I wished existed.</p>
+      <div class="proj-meta"><span><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span><span>★ 6 stars</span></div>
+    </a>
+    <a class="proj reveal" href="https://github.com/sakib412/adonisjs-mongoose" target="_blank" rel="noopener">
+      <div class="proj-top">
+        <h3>adonisjs-mongoose</h3>
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+      </div>
+      <p>Mongoose adapter for AdonisJS — bringing MongoDB's ODM into Adonis's provider and DI system.</p>
+      <div class="proj-meta"><span><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span><span>★ Open source</span></div>
+    </a>
+    <a class="proj reveal" href="https://github.com/AppifyLab/eslint-plugin" target="_blank" rel="noopener">
+      <div class="proj-top">
+        <h3>eslint-plugin (AppifyLab)</h3>
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+      </div>
+      <p>Custom ESLint rules encoding our team's hard-won conventions — catching scaling and security footguns at lint time, not in code review.</p>
+      <div class="proj-meta"><span><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span>Team tooling</span></div>
+    </a>
+    <a class="proj reveal" href="https://github.com/sakib412?tab=repositories" target="_blank" rel="noopener">
+      <div class="proj-top">
+        <h3>…and 100+ more</h3>
+        <svg viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.8 9.8-1.4-1.4L17.6 5H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/></svg>
+      </div>
+      <p>Experiments, templates, course projects, and tools — everything public lives on my GitHub. Browse the full archive.</p>
+      <div class="proj-meta"><span>github.com/sakib412</span></div>
+    </a>
+  </div>
+</section>
+
+<section id="skills" class="wrap">
+  <p class="kicker">Skills</p>
+  <h2 class="reveal">What I work with.</h2>
+  <div class="skill-cols">
+    <div class="skill-col reveal">
+      <h3>Frontend</h3>
+      <ul>
+        <li>React 19 / Next.js (App Router)</li>
+        <li>TypeScript</li>
+        <li>Tailwind CSS / ShadCN</li>
+        <li>TanStack Query</li>
+        <li>Lexical / rich text editors</li>
+      </ul>
+    </div>
+    <div class="skill-col reveal">
+      <h3>Backend</h3>
+      <ul>
+        <li>Node.js / AdonisJS</li>
+        <li>MySQL / PostgreSQL</li>
+        <li>MongoDB / DynamoDB</li>
+        <li>Redis / WebSockets</li>
+        <li>Multi-tenant architecture</li>
+      </ul>
+    </div>
+    <div class="skill-col reveal">
+      <h3>Infra & Tooling</h3>
+      <ul>
+        <li>AWS (SES, S3, DynamoDB…)</li>
+        <li>Docker / CI-CD</li>
+        <li>Turborepo monorepos</li>
+        <li>Cloudflare / R2</li>
+        <li>Pulumi (IaC)</li>
+      </ul>
+    </div>
+    <div class="skill-col reveal">
+      <h3>Leadership</h3>
+      <ul>
+        <li>Technical roadmapping</li>
+        <li>Architecture review</li>
+        <li>Cost-aware engineering</li>
+        <li>Code review culture</li>
+        <li>Mentoring engineers</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="wrap">
+  <div class="contact-card reveal">
+    <p class="kicker" style="justify-content:center">Contact</p>
+    <h2>Let's build something.</h2>
+    <p>
+      Whether it's a hard scaling problem, a product idea, or just talking shop about
+      TypeScript and system design — my inbox is open.
+    </p>
+    <a class="btn btn-primary" href="mailto:sakib@appifylab.com">sakib@appifylab.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <p>© <span id="year"></span> Najmus Sakib · Dhaka, Bangladesh</p>
+    <p>Designed & built by hand · <a href="https://github.com/sakib412/sakib412.github.io">view source</a></p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(
+    (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("in")),
+    { threshold: 0.12 }
+  );
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+</script>
+</body>
+</html>
