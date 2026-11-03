@@ -11,23 +11,25 @@ tags: [devops, nodejs, nginx, deployment, linux]
 
 ## About this series
 
-**Shipping It** follows one small app from a single hand-built server to the kind of deployment system large engineering teams run. We climb one step at a time, and only when the current setup starts to hurt.
+Every deployment system at a large company started as one person typing commands into a server. This series walks that whole road, one step at a time: from a solo developer deploying by hand, to a small team with CI/CD, to the progressive, self-healing pipelines enterprises run today.
 
-| Stage | Team size | What we add |
-| --- | --- | --- |
-| Solo, one server | 1 engineer | A public server, process manager, reverse proxy, domain and HTTPS; then scripted deploys, rollback and containers |
-| Small team | 2 to 8 engineers | CI/CD, staging and production environments, secrets, safe database migrations |
-| Scaling the system | Several teams | Load balancers, infrastructure as code, orchestration, microservices |
-| Release engineering | Many services | Observability, release sets, rollback strategies, feature flags, A/B testing, canary releases |
-| Enterprise | Many teams and regions | GitOps, platform engineering, multi-region rollouts, autonomous deployment |
+Each part solves the pain the previous part leaves behind. Nothing is introduced before you need it, so you can stop at whatever stage fits your team.
 
-Every part follows the same shape:
+| Part | Topic | Team size | What you add |
+| --- | --- | --- | --- |
+| 1 | Your first deploy, by hand | Solo | A server, a process manager, a reverse proxy, HTTPS |
+| 2 | Scripting the deploy | Solo | One-command deploys, release folders, instant rollback |
+| 3 | Containers | Solo to small | A reproducible artifact that runs the same everywhere |
+| 4 | CI/CD | 2 to 5 engineers | Tests on every PR, build once, deploy on merge |
+| 5 | Environments and team workflow | Small team | Staging, preview environments, secrets, safe DB migrations |
+| 6 | Infrastructure as code and orchestration | Growing team | Terraform, load balancers, rolling deploys, health checks |
+| 7 | Rollback strategies | Growing team | Blue/green, version pinning, rolling forward vs back |
+| 8 | Feature flags and A/B testing | Product + engineering | Separating deploy from release, experiments |
+| 9 | Canary releases and progressive delivery | Multiple teams | Small-percentage rollouts, metric gates, waves |
+| 10 | GitOps and platform engineering | Enterprise | Desired state in Git, golden paths, audit trails |
+| 11 | Autonomous deployment | Enterprise | Automated analysis, self-rollback, systems that ship themselves |
 
-- It **starts from a pain** the previous part left behind, so you feel the problem before you see the fix.
-- It **fixes that pain with the simplest tool that works**, using real commands you can run on a real server.
-- It **ends with a standards check**: which industry practices (the Twelve-Factor App, CIS Benchmarks and others) the setup now follows, and which it still breaks.
-
-**Who it is for:** developers who can build an app but have never shipped one, and engineers who use CI/CD and Kubernetes every day but want to know why each piece exists. Stop at whichever stage fits your team; you will know exactly what you are trading off.
+We start where everyone starts: one server, one SSH session, and a lot of trust in yourself.
 
 ---
 
